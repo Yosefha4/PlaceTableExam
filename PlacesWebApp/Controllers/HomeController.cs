@@ -17,11 +17,20 @@ namespace PlacesWebApp.Controllers
 
         }
 
-        public IActionResult Index(int page = 1)
+        public IActionResult Index(int page = 1 ,string search = "")
         {
             int pageSize = 5;
 
-            var places = placesDbContext.PlacesTable
+            //Search update
+            var query = placesDbContext.PlacesTable.AsQueryable();
+
+            if (!string.IsNullOrEmpty(search))
+            {
+                query = query.Where(p => p.PlaceName.Contains(search));
+            }
+            ///
+
+            var places = query
                 .OrderBy(p => p.PlaceId)
                 .Skip((page - 1) * pageSize)
                 .Take(pageSize)
@@ -42,5 +51,7 @@ namespace PlacesWebApp.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+       
     }
 }

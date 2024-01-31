@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PlacesWebApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fce052e9f78a4600ef6ae7825827bb15ca58fe06")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+813b10fa0808f8729398e06756646c20e741d8d0")]
 [assembly: System.Reflection.AssemblyProductAttribute("PlacesWebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PlacesWebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

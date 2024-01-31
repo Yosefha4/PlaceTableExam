@@ -7,6 +7,14 @@
 <div >
     <h1 class="text-center">Places Challenge</h1>
 
+    <form method="get" asp-action="Index" asp-controller="Home">
+        <div class="mb-3">
+            <label class="form-label">Search</label>
+            <input type="text" class="form-control" name="search" placeholder="Search Your Place.." />
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
     <div class="mt-5">
         <h2>Our Places</h2>
         <table class="table">
