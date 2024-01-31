@@ -1,0 +1,52 @@
+﻿@model Tuple<List<PlacesWebApp.Models.PlaceItem>, int, int>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div >
+    <h1 class="text-center">Places Challenge</h1>
+
+    <div class="mt-5">
+        <h2>Our Places</h2>
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    var counter = 1;
+                }
+                @foreach (var place in Model.Item1)
+                {
+                    <tr>
+                        <td>@counter</td>
+                        <td>@place.PlaceName</td>
+                        <td>
+                            <a href="@Url.Action("Edit", "Place", new { id = place.PlaceId })" class="btn btn-primary">Edit</a>
+                        </td>
+                    </tr>
+                    counter++;
+                }
+            </tbody>
+        </table>
+
+         <div class="pagination">
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                @for (int i = 1; i <= Model.Item2; i++)
+                {
+                    <li class="page-item @(i == Model.Item3 ? "active" : "")">
+                        <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </div>
+
+    </div>
+</div>

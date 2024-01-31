@@ -1,0 +1,23 @@
+﻿@model PlacesWebApp.Models.PlaceItem
+
+<div class="container">
+    <h1>Edit Place</h1>
+
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="PlaceId" />
+
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" asp-for="PlaceName" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <a asp-action="Index" asp-controller="Home" class="btn btn-secondary">Cancel</a>
+
+        <hr />
+
+        <h2>Delete Place</h2>
+        <p>Are you sure you want to delete this place?</p>
+        <button type="submit" formaction="@Url.Action("Delete", "Place", new { id = Model.PlaceId })" class="btn btn-danger">Delete</button>
+    </form>
+</div>

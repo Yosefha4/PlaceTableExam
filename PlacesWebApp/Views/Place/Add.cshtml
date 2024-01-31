@@ -1,0 +1,33 @@
+﻿@model PlacesWebApp.Models.PlaceItem
+
+@{
+    var errorMessage = TempData["ErrorMessage"] as string;
+}
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger">
+        @errorMessage
+    </div>
+}
+
+
+
+    <div class="container">
+        <h1>Add New Places !</h1>
+   
+
+    <div>
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" required id="name" asp-for="PlaceName" placeholder="Enter the place name ..." />
+            </div>
+            <div>
+                <button class="btn btn-dark" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+
+</div>
